@@ -1,4 +1,4 @@
-<DnaLibrary Name="自定义函数ByExcel催化剂" RuntimeVersion="v4.0">
+<DnaLibrary Name="自定义函数By Sucht" RuntimeVersion="v4.0">
   <ExternalLibrary Path="ExcelUDF.dll" LoadFromBytes="true" Pack="true" />
   <Reference Path="ExcelDna.IntelliSense.dll" Pack="true" />
   <Reference Path="ChnCharInfo.dll" Pack="true" />
@@ -19,33 +19,37 @@
        Excel-DNA also allows the xml for ribbon UI extensions to be specified in the .dna file.
        See the main Excel-DNA site at http://excel-dna.net for downloads of the full distribution.
   -->
-  <!--<Image Name="M" Path="resize.png" Pack="true" />-->
-  <!--<CustomUI>
-    <customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' loadImage='LoadImage'>
+ <Image Name="M" Path="resize.png" Pack="true" />
+ <CustomUI>
+  <customUI xmlns='http://schemas.microsoft.com/office/2009/07/customui' loadImage='LoadImage'>
     <ribbon>
       <tabs>
-        <tab id="tab1" label="公式扩展">
-          <group id="group1" label="Excel催化剂出品">
+        <tab id="tab1" label="安徽水质">
+          <group id="group1" label="常用工具">
             <button id="OnFomularResize" onAction="OnFomularResize_Click" label="公式扩展" image="resize" size="large" />
             <button id="OnFomularDelete" onAction="OnFomularDelete_Click" label="公式删除" image="delete" size="large" />
             <button id="OnFomularValue" onAction="OnFomularValue_Click" label="公式数值化" image="numbervalue" size="large" />
             <button idMso="FunctionWizard" size="large"/>
           </group>
-          <group id="contactGroup" label="互动区">
-            <gallery id="gal1" size="large" label="好用打赏一下" image="money">
+          <group id="contactGroup" label="水质评价">
+            <gallery id="gal1" size="large" label="监测信息" image="money">
               <item  id="dashang" image="dashang"/>
             </gallery>
-            <gallery id="gal2" size="large" label="资源推荐" image="contact" showItemImage="true" itemWidth="300" itemHeight="300">
+            <gallery id="gal2" size="large" label="地表水评价" image="contact" showItemImage="true" itemWidth="300" itemHeight="300">
               <item id="author" image="author" />
               <item id="gongzhonghao" image="gongzhonghao"/>
               <item id="QQqun" image="QQqun"/>
               <item id="qianliao" image="qianliao"/>
-            </gallery>
-            
+            </gallery>            
           </group>
         </tab>
       </tabs>
     </ribbon>
+    <contextMenus>
+      <contextMenu idMso="ContextMenuCell">    
+        <button id="NewButton" label="快速计算" onAction="OA" imageMso="EquationInsertNew" insertBeforeMso="Cut"/>
+      </contextMenu>
+    </contextMenus>
   </customUI>
-  </CustomUI>-->
+</CustomUI>
 </DnaLibrary>

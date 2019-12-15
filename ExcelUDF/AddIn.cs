@@ -17,7 +17,7 @@ namespace ExcelCuiHuaJi
         {
             if (AddIn.IsFirstRun == true)
             {
-                IntelliSenseServer.Register();
+                IntelliSenseServer.Install();
                 AddIn.IsFirstRun = false;
             }
 

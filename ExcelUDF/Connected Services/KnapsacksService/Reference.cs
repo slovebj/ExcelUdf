@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExcelCuiHuaJi.KnapsacksService {
+namespace ExcelUDF.KnapsacksService {
     using System.Runtime.Serialization;
     using System;
     

@@ -6,13 +6,13 @@ using System.Text.RegularExpressions;
 using ExcelDna.Integration;
 using static ExcelDna.Integration.XlCall;
 using IExcel = Microsoft.Office.Interop.Excel;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取指定字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取指定字符。**Excel自定义函数**")]
         public static object WB提取指定字符(
             [ExcelArgument(Description = "待查找替换的字符串")] string inputString,
             [ExcelArgument(Description = "查找用于替换的指定字符，多个字符用逗号隔开")] string matchString,
@@ -28,7 +28,7 @@ namespace ExcelCuiHuaJi
 
             return RegMatchValue(inputString, pattern, splitStr);
         }
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取中文。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取中文。**Excel自定义函数**")]
         public static object WB提取中文(
             [ExcelArgument(Description = "待分割的字符串")] string inputString,
             [ExcelArgument(Description = "当提取多个结果时，结果之间的间隔符")] string splitStr
@@ -39,7 +39,7 @@ namespace ExcelCuiHuaJi
             return RegMatchValue(inputString, pattern, splitStr);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取数字。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取数字。**Excel自定义函数**")]
         public static object WB提取数字(
                 [ExcelArgument(Description = "待分割的字符串")] string inputString,
                 [ExcelArgument(Description = "当提取多个结果时，结果之间的间隔符")] string splitStr
@@ -50,7 +50,7 @@ namespace ExcelCuiHuaJi
             return RegMatchValue(inputString, pattern, splitStr);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取英文。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "提取英文。**Excel自定义函数**")]
         public static object WB提取英文(
         [ExcelArgument(Description = "待分割的字符串")] string inputString,
         [ExcelArgument(Description = "当提取多个结果时，结果之间的间隔符")] string splitStr
@@ -61,7 +61,7 @@ namespace ExcelCuiHuaJi
             return RegMatchValue(inputString, pattern, splitStr);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换英文。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换英文。**Excel自定义函数**")]
         public static object WB替换英文(
                 [ExcelArgument(Description = "待查找替换的字符串")] string inputString,
                 [ExcelArgument(Description = "查找到的字符串替换为此字符串，默认不输入为替换为空")] string replaceString
@@ -72,7 +72,7 @@ namespace ExcelCuiHuaJi
             return RegReplaceValue(inputString, pattern, replaceString);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换中文。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换中文。**Excel自定义函数**")]
         public static object WB替换中文(
         [ExcelArgument(Description = "待查找替换的字符串")] string inputString,
         [ExcelArgument(Description = "查找到的字符串替换为此字符串，默认不输入为替换为空")] string replaceString
@@ -82,7 +82,7 @@ namespace ExcelCuiHuaJi
             return RegReplaceValue(inputString, pattern, replaceString);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换中文。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换中文。**Excel自定义函数**")]
         public static object WB替换数字(
             [ExcelArgument(Description = "待查找替换的字符串")] string inputString,
             [ExcelArgument(Description = "查找到的字符串替换为此字符串，默认不输入为替换为空")] string replaceString
@@ -92,7 +92,7 @@ namespace ExcelCuiHuaJi
             return RegReplaceValue(inputString, pattern, replaceString);
         }
 
-        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换指定字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_提取替换", Description = "替换指定字符。**Excel自定义函数**")]
         public static object WB替换指定字符(
             [ExcelArgument(Description = "待查找替换的字符串")] string inputString,
             [ExcelArgument(Description = "查找用于替换的指定字符，多个字符用逗号隔开")] string matchString,
@@ -121,7 +121,7 @@ namespace ExcelCuiHuaJi
             return string.Join(splitStr, matches.Cast<Match>().Where(s => !string.IsNullOrEmpty(s.Value)));
         }
 
-        [ExcelFunction(Category = "文本处理", Description = "字符串去重。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", Description = "字符串去重。**Excel自定义函数**")]
         public static object TextDistinctChar(
             [ExcelArgument(Description = "待分割的字符串")] string inputString
                 )
@@ -130,7 +130,7 @@ namespace ExcelCuiHuaJi
             return string.Join("", inputString.ToArray().Distinct());
         }
 
-        [ExcelFunction(Category = "文本处理", Description = "字符串反转。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", Description = "字符串反转。**Excel自定义函数**")]
         public static object TextReverse(
                 [ExcelArgument(Description = "待分割的字符串")] string inputString
         )
@@ -139,7 +139,7 @@ namespace ExcelCuiHuaJi
             return string.Join("", inputString.ToArray().Reverse());
         }
 
-        [ExcelFunction(Category = "文本处理", Description = "字符串排序。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", Description = "字符串排序。**Excel自定义函数**")]
         public static object TextOrder(
         [ExcelArgument(Description = "待分割的字符串")] string inputString,
         [ExcelArgument(Description = "是否降序排列，默认为升序，TRUE为降序，FALSE为升序")] bool isDesc
@@ -156,7 +156,7 @@ namespace ExcelCuiHuaJi
             }
 
         }
-        [ExcelFunction(Category = "文本处理", Description = "根据传入的分割字符，对字符串进行分割操作，返回多值。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", Description = "根据传入的分割字符，对字符串进行分割操作，返回多值。**Excel自定义函数**")]
         public static object TextSplits(
             [ExcelArgument(Description = "待分割的字符串")] string inputString,
             [ExcelArgument(Description = "输入分隔字符串，可以引用多个连续单元格或以英文逗号分隔的一个字符串")] object splitValues,
@@ -168,7 +168,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result, optAlignHorL);
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的分割字符，对字符串进行分割操作，返回第N个值。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的分割字符，对字符串进行分割操作，返回第N个值。**Excel自定义函数**")]
         public static object TextSplit(
             [ExcelArgument(Description = "待分割的字符串")] string inputString,
             [ExcelArgument(Description = "输入分隔字符串，可以引用多个连续单元格或以英文逗号分隔的一个字符串")] object splitValues,
@@ -188,7 +188,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前后的字符清除。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前后的字符清除。**Excel自定义函数**")]
         public static object TextTrim(
             [ExcelArgument(Description = "待前后清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的单个字符串")] object trimValues
@@ -198,7 +198,7 @@ namespace ExcelCuiHuaJi
             return inputString.Trim(trimList.Select(s => Convert.ToChar(s.Trim().Substring(0, 1))).ToArray());
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。**Excel自定义函数**")]
         public static object TextTrimStart(
             [ExcelArgument(Description = "待前面清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的单个字符串")] object trimValues
@@ -209,7 +209,7 @@ namespace ExcelCuiHuaJi
             return inputString.TrimStart(trimList.Select(s => Convert.ToChar(s.Trim().Substring(0, 1))).ToArray());
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。**Excel自定义函数**")]
         public static object TextTrimEnd(
             [ExcelArgument(Description = "待前面清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的一个ASCII字符串")] object trimValues
@@ -219,7 +219,7 @@ namespace ExcelCuiHuaJi
             return inputString.TrimEnd(trimList.Select(s => Convert.ToChar(s.Trim().Substring(0, 1))).ToArray());
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "左侧填充指定个数字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "左侧填充指定个数字符。**Excel自定义函数**")]
         public static object TextPadLeft(
             [ExcelArgument(Description = "待填充字符")] string inputString,
             [ExcelArgument(Description = "需要填充的单个字符")] object padStr,
@@ -231,7 +231,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "右侧填充指定个数字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "右侧填充指定个数字符。**Excel自定义函数**")]
         public static object TextPadRight(
             [ExcelArgument(Description = "待填充字符")] string inputString,
             [ExcelArgument(Description = "需要填充的单个字符")] object padStr,
@@ -240,7 +240,7 @@ namespace ExcelCuiHuaJi
         {
             return inputString.PadRight(strLen, Convert.ToChar(padStr.ToString().Trim().Substring(0, 1)));
         }
-        [ExcelFunction(Category = "文本处理",IsThreadSafe =true, Description = "字符串拼接函数，StringJoinRange：传入的需要写入目标单元格的数据区域，strSplit：用来分割的字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理",IsThreadSafe =true, Description = "字符串拼接函数，StringJoinRange：传入的需要写入目标单元格的数据区域，strSplit：用来分割的字符。**Excel自定义函数**")]
         //AllowReference = true把传进来的EXCEL区域识别出来。
         public static string StringJoin(
             [ExcelArgument(Description = "输入要拼接的字符串区域")] object StringJoinRange,
@@ -253,7 +253,7 @@ namespace ExcelCuiHuaJi
             return string.Join(strSplit, valuesArr.Select(s=> strSurround+s.ToString()+ strSurround));
         }
 
-    [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "字符串拼接函数，在查找的区域查找对应条件下的值，最终用分隔符拼接起来，类似系统函数SUMIF、COUNTIF。Excel催化剂出品，必属精品！")]
+    [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "字符串拼接函数，在查找的区域查找对应条件下的值，最终用分隔符拼接起来，类似系统函数SUMIF、COUNTIF。**Excel自定义函数**")]
     public static object StringJoinIf(
             [ExcelArgument(Description = "查找的区域，若有多列引用，请使用FZGetMultiColRange函数输入")] object[,] lookupRange,
             [ExcelArgument(Description = "用于验证查找区域是否符合的条件")] string criteria,

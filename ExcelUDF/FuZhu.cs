@@ -11,12 +11,12 @@ using System.Xml.Linq;
 using System.IO;
 
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "辅助函数", Description = "传入参数为多多列时，需要使用此函数来引用多列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "辅助函数", Description = "传入参数为多多列时，需要使用此函数来引用多列。**Excel自定义函数**")]
         public static object FZGetMultiColRange(
     [ExcelArgument(Description = "分组列区域1，仅能选取一列")] object[,] groupRange1,
     [ExcelArgument(Description = "分组列区域2，仅能选取一列")] object[,] groupRange2,

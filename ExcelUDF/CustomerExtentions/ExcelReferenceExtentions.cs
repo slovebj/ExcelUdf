@@ -5,7 +5,7 @@ using System.Text;
 using ExcelDna.Integration;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public static class ExcelReferenceExtentions
     {

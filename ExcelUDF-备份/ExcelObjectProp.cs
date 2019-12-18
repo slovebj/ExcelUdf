@@ -5,11 +5,11 @@ using System.Text;
 using ExcelDna.Integration;
 using static ExcelDna.Integration.XlCall;
 using IExcel = Microsoft.Office.Interop.Excel;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的超链接地址。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的超链接地址。**Excel自定义函数**")]
 
         public static string GetCellHyperlinksAddress(
                             [ExcelArgument(Description = "带链接的单元格", AllowReference = true)] object srcRange)
@@ -19,7 +19,7 @@ namespace ExcelCuiHuaJi
             return excelRange.Hyperlinks[1].Address;
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的行高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的行高。**Excel自定义函数**")]
 
         public static double GetCellRowHeight(
                     [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcRange)
@@ -35,7 +35,7 @@ namespace ExcelCuiHuaJi
             return excelRange.Height;
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的缩进量。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的缩进量。**Excel自定义函数**")]
 
         public static double GetCellIndentLevel(
             [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcRange)
@@ -51,7 +51,7 @@ namespace ExcelCuiHuaJi
             return excelRange.IndentLevel;
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的列宽。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的列宽。**Excel自定义函数**")]
 
         public static double GetCellColumnWidth(
             [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcRange)
@@ -68,7 +68,7 @@ namespace ExcelCuiHuaJi
             return excelRange.EntireColumn.ColumnWidth;
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的公式。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的公式。**Excel自定义函数**")]
         public static object GetCellFormular(
                     [ExcelArgument(Description = "带公式的单元格", AllowReference = true)] object srcRange)
         {
@@ -85,7 +85,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的批注信息。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的批注信息。**Excel自定义函数**")]
         public static object GetCellCommentText(
             [ExcelArgument(Description = "带批注的单元格", AllowReference = true)] object srcRange)
         {
@@ -109,7 +109,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的显示文本信息。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的显示文本信息。**Excel自定义函数**")]
         public static object GetCellText(
              [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -126,7 +126,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的数字格式设置信息。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的数字格式设置信息。**Excel自定义函数**")]
         public static object GetCellNumberFormat(
                 [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -143,7 +143,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的填充颜色索引。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的填充颜色索引。**Excel自定义函数**")]
         public static object GetCellInteriorColor(
           [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -178,7 +178,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字颜色索引。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字颜色索引。**Excel自定义函数**")]
         public static object GetCellFontColor(
                 [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -199,7 +199,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字是否粗体。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字是否粗体。**Excel自定义函数**")]
         public static object GetCellFontBold(
         [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -217,7 +217,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字是否斜体。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字是否斜体。**Excel自定义函数**")]
         public static object GetCellFontItalic(
                         [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -235,7 +235,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字字号。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字字号。**Excel自定义函数**")]
         public static object GetCellFontSize(
                 [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -253,7 +253,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字字号。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的文字字号。**Excel自定义函数**")]
         public static object GetCellFontName(
         [ExcelArgument(Description = "引用单元格", AllowReference = true)] object srcCell)
         {
@@ -272,7 +272,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的批注信息。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取单元格的批注信息。**Excel自定义函数**")]
         public static object GetRangeAddress(
                  [ExcelArgument(Description = "输入需获取地址的单元格区域，获取本身地址可省略输入", AllowReference = true)] object srcRange,
                  [ExcelArgument(Description = "是否绝对引用返回引用的行部分，默认为否")] bool isRowAbsolute,
@@ -300,20 +300,20 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作表名称。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作表名称。**Excel自定义函数**")]
         public static object GetCurrentWorkSheetName()
         {
             return Common.ExcelApp.ActiveSheet.Name;
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作薄名称。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作薄名称。**Excel自定义函数**")]
         public static object GetCurrentWorkBookName()
         {
             return Common.ExcelApp.ActiveWorkbook.Name;
 
         }
 
-        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作薄全路径。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "Excel对象属性", IsVolatile = true, IsMacroType = true, Description = "获取当前工作薄全路径。**Excel自定义函数**")]
         public static object GetCurrentWorkBookFullPath()
         {
             return Common.ExcelApp.ActiveWorkbook.FullName;

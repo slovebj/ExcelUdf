@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.International.Converters.TraditionalChineseToSimplifiedConverter;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "中文相关", Description = "繁体转简体。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "繁体转简体。**Excel自定义函数**")]
         public static object TraditionalChineseToSimplified(
                                                     [ExcelArgument(Description = "输入繁体中文字符")] string inputString
                                                     )
@@ -22,7 +22,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "中文相关", Description = "简体转繁体。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "简体转繁体。**Excel自定义函数**")]
         public static object SimplifiedChieseToTraditional(
                                             [ExcelArgument(Description = "输入简体中文字符")] string inputString
                                             )
@@ -33,7 +33,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "中文相关", Description = "数字转换为多个单元格存放的效果，财务用途。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "数字转换为多个单元格存放的效果，财务用途。**Excel自定义函数**")]
         public static object NumberConvertToMultiCells(
             [ExcelArgument(Description = "需要拆分的原始数字")] double inputNumber,
             [ExcelArgument(Description = "拆分的总列数，含角分。拆分到亿为单位的话为11")] int colNum,
@@ -69,7 +69,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "中文相关", Description = "数字转换为大写中文金额。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "数字转换为大写中文金额。**Excel自定义函数**")]
         public static string NumberConvertToChineseCapitalAmount(
             [ExcelArgument(Description = "传入需要转换大写的数字")] double inputNumber)
         {
@@ -132,7 +132,7 @@ namespace ExcelCuiHuaJi
 
 
         }
-        [ExcelFunction(Category = "中文相关", Description = "中文转全拼。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "中文转全拼。**Excel自定义函数**")]
         public static string ChineseConvertToPinYinAllSpell(
             [ExcelArgument(Description = "转入需要转换拼音的中文字符串")] string inputChineseChar,
             [ExcelArgument(Description = "中文拼音间的间隔符")] string separateString
@@ -141,14 +141,14 @@ namespace ExcelCuiHuaJi
             return PingYinHelper.ConvertToAllSpell(inputChineseChar, separateString);
         }
 
-        [ExcelFunction(Category = "中文相关", Description = "中文转首字母拼单。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "中文转首字母拼单。**Excel自定义函数**")]
         public static string ChineseConvertToPinYinFirstSpell([ExcelArgument(Description = "转入需要转换拼音的中文字符串")] string inputChineseChar)
         {
             return PingYinHelper.GetFirstSpell(inputChineseChar);
         }
 
 
-        [ExcelFunction(Category = "中文相关", Description = "大写中文金额转换为数字。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "中文相关", Description = "大写中文金额转换为数字。**Excel自定义函数**")]
         public static decimal ChineseCapitalAmountConvertToNumber([ExcelArgument(Description = "传入需要转换大写的数字")] string inputChinseUpperMoney)
         {
 

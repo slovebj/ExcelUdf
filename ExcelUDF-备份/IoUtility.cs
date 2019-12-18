@@ -5,12 +5,12 @@ using System.Linq;
 using System.IO;
 using System.Text.RegularExpressions;
 using static ExcelDna.Integration.XlCall;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
 
     public partial class ExcelUDF
     {
-        [ExcelFunction(Category = "文件文件夹相关", Description = "根据给定的路径字符，合成文件路径，可以末尾无需输入路径分隔符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "根据给定的路径字符，合成文件路径，可以末尾无需输入路径分隔符。**Excel自定义函数**")]
         public static object PathCombine(
    [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path1,
    [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径径，最后的\可有可没有")] string path2,
@@ -47,7 +47,7 @@ namespace ExcelCuiHuaJi
             return Path.Combine(paths.ToArray());
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取上一级的文件夹全路径。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取上一级的文件夹全路径。**Excel自定义函数**")]
         public static string GetDirectoryName(
                                     [ExcelArgument(Description = "传入一个的文件或文件夹全路径字符串")] string srcFullpath)
         {
@@ -55,7 +55,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件大小，单位KB。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件大小，单位KB。**Excel自定义函数**")]
         public static object GetFileSize(
                             [ExcelArgument(Description = "传入一个的文件全路径字符串")] string srcFullpath)
         {
@@ -73,7 +73,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "判断传入的文件或文件 夹路径是否是真实存在。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "判断传入的文件或文件 夹路径是否是真实存在。**Excel自定义函数**")]
         public static bool IsFileOrDirExist(
             [ExcelArgument(Description = "传入一个文件或文件夹全名字符串")] string srcFullpath)
         {
@@ -88,7 +88,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹创建时间。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹创建时间。**Excel自定义函数**")]
         public static object GetFileOrDirCreateTime(
             [ExcelArgument(Description = "传入一个文件或文件夹路径")] string fileOrdirPath)
         {
@@ -107,7 +107,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹属性。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹属性。**Excel自定义函数**")]
         public static object GetFileOrDirAttributes(
             [ExcelArgument(Description = "传入一个文件或文件夹路径")] string fileOrdirPath)
         {
@@ -127,7 +127,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹最后修改时间。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件或文件夹最后修改时间。**Excel自定义函数**")]
         public static object GetFileOrDirModifyTime(
             [ExcelArgument(Description = "传入一个文件或文件夹路径")] string fileOrdirPath)
         {
@@ -147,14 +147,14 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名，格式为：文件名+后缀名,如：C:\test\test.txt返回的是test.txt字符串。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名，格式为：文件名+后缀名,如：C:\test\test.txt返回的是test.txt字符串。**Excel自定义函数**")]
         public static string GetFileName(
              [ExcelArgument(Description = "传入一个含路径的文件全名字符串")] string srcFullpath)
         {
             return Path.GetFileName(srcFullpath);
         }
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名的后缀名，如：C:\test\test.txt返回的是.txt)。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名的后缀名，如：C:\test\test.txt返回的是.txt)。**Excel自定义函数**")]
         public static string GetFileExtension(
                      [ExcelArgument(Description = "传入一个含路径的文件全名字符串")] string srcFullpath)
         {
@@ -162,7 +162,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名不含文件后缀名，如：C:\test\test.txt返回的是test字符串)。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名不含文件后缀名，如：C:\test\test.txt返回的是test字符串)。**Excel自定义函数**")]
         public static string GetFileNameWithoutExtension(
                              [ExcelArgument(Description = "传入一个含路径的文件全名字符串")] string srcFullpath)
         {
@@ -170,7 +170,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的子文件夹,srcFolder为传入的顶层目录，containsText可用作筛选包含containsText内容的文件夹，isSearchAllDirectory为是否查找顶层目录下的文件夹的所有子文件夹。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的子文件夹,srcFolder为传入的顶层目录，containsText可用作筛选包含containsText内容的文件夹，isSearchAllDirectory为是否查找顶层目录下的文件夹的所有子文件夹。**Excel自定义函数**")]
         public static object GetSubFolders(
             [ExcelArgument(Description = "传入的顶层目录，最终返回的结果将是此目录下的文件夹或子文件夹")] string srcFolder,
             [ExcelArgument(Description = "查找的文件夹中是否需要包含指定字符串，不传参数默认为返回所有文件夹，可传入复杂的正则表达式匹配。")] string optContainsText,
@@ -199,7 +199,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的文件清单,srcFolder为传入的顶层目录，containsText可用作筛选包含containsText内容的文件夹，isSearchAllDirectory为是否查找顶层目录下的文件夹的所有子文件夹。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的文件清单,srcFolder为传入的顶层目录，containsText可用作筛选包含containsText内容的文件夹，isSearchAllDirectory为是否查找顶层目录下的文件夹的所有子文件夹。**Excel自定义函数**")]
         public static object GetFiles(
                 [ExcelArgument(Description = "传入的顶层目录，最终返回的结果将是此目录下的文件夹或子文件夹下的全路径文件名")] string srcFolder,
                 [ExcelArgument(Description = "查找的文件名中是否需要包含指定字符串，不传参数默认为返回所有文件，可传入复杂的正则表达式匹配。")] string containsText,
@@ -227,7 +227,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的不同层级的文件夹名称。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取指定目录下的不同层级的文件夹名称。**Excel自定义函数**")]
         public static object GetFolderByDepth(
             [ExcelArgument(Description = "传入一个文件夹的详细路径")] string srcFolder,
             [ExcelArgument(Description = "文件夹深度，请传入整数，若是小数将截断，正数为从左到右查，负数为从右往左查,不传参数时默认为右边第1层文件夹")] int intFolderDepth

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历年份及节气名称返回对应年份下的节气所在日期。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历年份及节气名称返回对应年份下的节气所在日期。**Excel自定义函数**")]
         public static object RiQiGetDateByJieQiName(
         [ExcelArgument(Description = "节气对应的公历年")] int JieQiYear,
         [ExcelArgument(Description = "节气名称")] string JieQiName
@@ -31,7 +31,7 @@ namespace ExcelCuiHuaJi
             return ExcelError.ExcelErrorValue;
         }
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回对应的节气区间。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回对应的节气区间。**Excel自定义函数**")]
         public static object RiQiGetJieQiNameByInputDate(
                 [ExcelArgument(Description = "输入公历日期，仅限1901至2050年间的日期")] DateTime inputDate
                                                         )
@@ -66,7 +66,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回农历。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回农历。**Excel自定义函数**")]
         public static string RiQiGetChineseLunisolarDateFromSolarDate(
            [ExcelArgument(Description = "公历日期")] DateTime solarDate)
         {
@@ -86,7 +86,7 @@ namespace ExcelCuiHuaJi
                                 );
         }
 
-        [ExcelFunction(Category = "日期相关", Description = "输入中国农历日期，返回公历。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入中国农历日期，返回公历。**Excel自定义函数**")]
         public static DateTime RiQiGetSolarDateFromChineseLunisolarDate(
                              [ExcelArgument(Description = "中国农历日期")] DateTime chineseLunisolarDate,
                               [ExcelArgument(Description = "当月是否是闰月")] bool isRunYue
@@ -118,7 +118,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回生肖。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回生肖。**Excel自定义函数**")]
         public static string RiQiGetShengXiao(
            [ExcelArgument(Description = "公历日期")] DateTime solarDate)
         {
@@ -128,7 +128,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回干支年份。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回干支年份。**Excel自定义函数**")]
         public static string RiQiGetGanZhiYear(
            [ExcelArgument(Description = "公历日期")] DateTime solarDate)
         {
@@ -141,7 +141,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回农历。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回农历。**Excel自定义函数**")]
         public static object RiQiGetXingZuo(
            [ExcelArgument(Description = "公历日期")] DateTime solarDate)
         {
@@ -160,7 +160,7 @@ namespace ExcelCuiHuaJi
             return ExcelError.ExcelErrorValue;
         }
 
-        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回年龄或工龄，不足一年部分舍去。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "日期相关", Description = "输入公历日期，返回年龄或工龄，不足一年部分舍去。**Excel自定义函数**")]
         public static object RiQiGetAge(
            [ExcelArgument(Description = "公历日期，出生日期或工作开始日期")] DateTime solarDate)
         {

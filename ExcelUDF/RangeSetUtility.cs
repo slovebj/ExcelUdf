@@ -5,11 +5,11 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。**Excel自定义函数**")]
         public static object RangeValuesDistinct(
          [ExcelArgument(Description = "源区域")] object srcRange,
          [ExcelArgument(Description = "是否保留空值，默认是不保留的，保留输入True，不保留输入False")] bool optIsRetainNull,
@@ -20,7 +20,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(arr, optAlignHorL);
         }
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。**Excel自定义函数**")]
         public static object[] RangeValuesDistinctArray(
          [ExcelArgument(Description = "源区域")] object srcRange,
          [ExcelArgument(Description = "是否保留空值，默认是不保留的，保留输入True，不保留输入False")] bool optIsRetainNull
@@ -43,7 +43,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。**Excel自定义函数**")]
         public static object RangeIntersectValue(
            [ExcelArgument(Description = "返回结果按行还是按列返回，默认不填按列返回，传入H按行返回")] string optAlignHorL,
            [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
@@ -63,7 +63,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他交集区域，求对区域的值求交集返回数据集。**Excel自定义函数**")]
         public static object[] RangeIntersectValueArray(
                [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
                [ExcelArgument(Description = "源区域")] object srcRange,
@@ -104,7 +104,7 @@ namespace ExcelCuiHuaJi
             return result;
 
         }
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他并集区域，求对区域的值求并集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他并集区域，求对区域的值求并集返回数据集。**Excel自定义函数**")]
         public static object RangeUnionValue(
          [ExcelArgument(Description = "返回结果按行还是按列返回，默认不填按列返回，传入H按行返回")] string optAlignHorL,
          [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
@@ -123,7 +123,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他并集区域，求对区域的值求并集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他并集区域，求对区域的值求并集返回数据集。**Excel自定义函数**")]
         public static object[] RangeUnionValueArray(
          [ExcelArgument(Description = "返回结果按行还是按列返回，默认不填按列返回，传入H按行返回")] string optAlignHorL,
          [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
@@ -162,7 +162,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他补集区域，求对区域的值求补集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他补集区域，求对区域的值求补集返回数据集。**Excel自定义函数**")]
         public static object RangeExceptValue(
            [ExcelArgument(Description = "返回结果按行还是按列返回，默认不填按列返回，传入H按行返回")] string optAlignHorL,
            [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
@@ -182,7 +182,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result, optAlignHorL);
         }
 
-        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他补集区域，求对区域的值求补集返回数据集。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "区域集合处理", Description = "区域值根据源区域和其他补集区域，求对区域的值求补集返回数据集。**Excel自定义函数**")]
         public static object[] RangeExceptValueArray(
          [ExcelArgument(Description = "返回结果集是否去重复项，默认不输入为否不去重处理，True为去重，False为不去重")] bool optIsDistinctResult,
          [ExcelArgument(Description = "源区域")] object srcRange,

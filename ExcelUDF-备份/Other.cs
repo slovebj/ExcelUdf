@@ -5,12 +5,12 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "其他高频函数",IsThreadSafe =true, Description = "不分组下的单列中国式排名。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "其他高频函数",IsThreadSafe =true, Description = "不分组下的单列中国式排名。**Excel自定义函数**")]
 
         public static object PM中国式排名(
                  [ExcelArgument(Description = "排名列区域")] object[,] rankRange,

@@ -11,13 +11,13 @@ using System.Xml.Linq;
 using System.IO;
 
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
 
-        [ExcelFunction(Category = "查找引用增强", Description = "类似INDEX+MATCH套路，查找值在交叉表结构的数据区域中对应的值。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "查找引用增强", Description = "类似INDEX+MATCH套路，查找值在交叉表结构的数据区域中对应的值。**Excel自定义函数**")]
         public static object CZYY查找引用INDEX(
                  [ExcelArgument(Description = "查找值的列区域，当有多列作为查找值的列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] lookupValueToRow,
                  [ExcelArgument(Description = "引用匹配列区域，当有多列作为引用匹配列列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] lookupValueToCol,
@@ -116,7 +116,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "查找引用增强", Description = "类似Vlookup的用法，查找某列的值在相对引用区域的对应的返回值。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "查找引用增强", Description = "类似Vlookup的用法，查找某列的值在相对引用区域的对应的返回值。**Excel自定义函数**")]
         public static object CZYY反向模糊查找引用LOOKUP(
                  [ExcelArgument(Description = "查找值的列区域，当有多列作为查找值的列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] lookupValueRange,
                  [ExcelArgument(Description = "引用匹配列区域，当有多列作为引用匹配列列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] referenceRange,
@@ -192,7 +192,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "查找引用增强", Description = "类似Vlookup的用法，查找某列的值在相对引用区域的对应的返回值。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "查找引用增强", Description = "类似Vlookup的用法，查找某列的值在相对引用区域的对应的返回值。**Excel自定义函数**")]
         public static object CZYY查找引用LOOKUP(
                   [ExcelArgument(Description = "查找值的列区域，当有多列作为查找值的列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] lookupValueRange,
                   [ExcelArgument(Description = "引用匹配列区域，当有多列作为引用匹配列列时，需使用辅助函数【FZGetMultiColRange】输入")] object[,] referenceRange,

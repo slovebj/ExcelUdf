@@ -5,12 +5,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "单位换算", Description = "不同进制数间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同进制数间的转换。**Excel自定义函数**")]
         public static object DWHS进制转换(
             [ExcelArgument(Description = "输入待转换的值")] string input,
             [ExcelArgument(Description = "输入值的进制数")] int fromType,
@@ -41,7 +41,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色RGB转换Html(
                     [ExcelArgument(Description = "输入R值，范围0-255")] object inputR,
                     [ExcelArgument(Description = "输入G值，范围0-255")] object inputG,
@@ -66,7 +66,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色RGB转换Ole(
             [ExcelArgument(Description = "输入R值，范围0-255")] object inputR,
             [ExcelArgument(Description = "输入G值，范围0-255")] object inputG,
@@ -87,7 +87,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色Ole转换RGB(
                 [ExcelArgument(Description = "输入Ole值，OFFICE软件的Color属性")] int inputOle
                      )
@@ -103,7 +103,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色Ole转换Html(
         [ExcelArgument(Description = "输入Ole值，OFFICE软件的Color属性")] int inputOle
              )
@@ -120,7 +120,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色Html转RGB(
                 [ExcelArgument(Description = "输入网页Html格式颜色值，由#开头")] string inputHtmlColor
                          )
@@ -136,7 +136,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "不同颜色间表示方法间的转换。**Excel自定义函数**")]
         public static object DWHS颜色Html转Ole(
         [ExcelArgument(Description = "输入网页Html格式颜色值，由#开头")] string inputHtmlColor
                  )
@@ -257,7 +257,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "字符转ASCII编号。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "字符转ASCII编号。**Excel自定义函数**")]
         public static object DWHS字符转ASCCII码(
              [ExcelArgument(Description = "输入所要查找的单个字符")] string character)
         {
@@ -274,7 +274,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "ASCII编转字符。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "ASCII编转字符。**Excel自定义函数**")]
         public static object DWHSASCCII转字符(
              [ExcelArgument(Description = "输入0-255之间的整数ASCII码")] int asciiCode)
         {
@@ -291,7 +291,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "Unix timestamp转普通日期。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "Unix timestamp转普通日期。**Excel自定义函数**")]
         public static object DWHSUnixTimestampToDatetime(
            [ExcelArgument(Description = "输入UnixTimestamp")] Int64 inputUnixTimestamp)
 
@@ -308,7 +308,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "普通日期转Unix timestamp。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "普通日期转Unix timestamp。**Excel自定义函数**")]
         public static object DWHSDatetimeToUnixTimestamp(
             [ExcelArgument(Description = "输入UnixTimestamp")] DateTime inputDateTime,
              [ExcelArgument(Description = "是否精确到秒，TRUE为秒，FALSE为毫秒")] bool isSecond
@@ -321,7 +321,7 @@ namespace ExcelCuiHuaJi
             return isSecond ? unixTime / 1000 : unixTime;
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "数字转万为单位。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "数字转万为单位。**Excel自定义函数**")]
         public static object DWHSNumberConverToWan(
            [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
            [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits,
@@ -337,7 +337,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "数字转亿为单位。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "数字转亿为单位。**Excel自定义函数**")]
         public static object DWHSNumberConverToYi(
            [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
            [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits,
@@ -356,7 +356,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "单位换算", Description = "美国加仑转升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "美国加仑转升。**Excel自定义函数**")]
         public static object DWHS美加仑转升(
            [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
            [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -365,7 +365,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "英国加仑转升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "英国加仑转升。**Excel自定义函数**")]
         public static object DWHS英加仑转升(
            [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
            [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -374,7 +374,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "升转汤勺。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "升转汤勺。**Excel自定义函数**")]
         public static object DWHS升转汤勺(
            [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
            [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -383,7 +383,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "升转调羹。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "升转调羹。**Excel自定义函数**")]
         public static object DWHS升转调羹(
                [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
                [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -392,7 +392,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "千米转英里。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "千米转英里。**Excel自定义函数**")]
         public static object DWHS千米转英里(
        [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
        [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -402,7 +402,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "米转英尺。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "米转英尺。**Excel自定义函数**")]
         public static object DWHS米转英尺(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -411,7 +411,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "米转码。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "米转码。**Excel自定义函数**")]
         public static object DWHS米转英码(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -421,7 +421,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "米转英寸。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "米转英寸。**Excel自定义函数**")]
         public static object DWHS米转英寸(
                [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
                [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -431,7 +431,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "海里转英里。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "海里转英里。**Excel自定义函数**")]
         public static object DWHS海里转英里(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -441,7 +441,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "海里转千米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "海里转千米。**Excel自定义函数**")]
         public static object DWHS海里转千米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -451,7 +451,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "汤勺转毫升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "汤勺转毫升。**Excel自定义函数**")]
         public static object DWHS汤勺转毫升(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -461,7 +461,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "调羹转毫升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "调羹转毫升。**Excel自定义函数**")]
         public static object DWHS调羹转毫升(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -471,7 +471,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "英国液量盎司转毫升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "英国液量盎司转毫升。**Excel自定义函数**")]
         public static object DWHS英液量盎司转毫升(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -481,7 +481,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "美国液量盎司转毫升。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "美国液量盎司转毫升。**Excel自定义函数**")]
         public static object DWHS美液量盎司转毫升(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -492,7 +492,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "英里转千米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "英里转千米。**Excel自定义函数**")]
         public static object DWHS英里转千米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -502,7 +502,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "英尺转米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "英尺转米。**Excel自定义函数**")]
         public static object DWHS英尺转米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -512,7 +512,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "英寸转米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "英寸转米。**Excel自定义函数**")]
         public static object DWHS英寸转米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -522,7 +522,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "中国寸转米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "中国寸转米。**Excel自定义函数**")]
         public static object DWHS中国寸转米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -532,7 +532,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "中国尺转米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "中国尺转米。**Excel自定义函数**")]
         public static object DWHS中国尺转米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -543,7 +543,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "单位换算", Description = "码转米。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "码转米。**Excel自定义函数**")]
         public static object DWHS码转米(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -553,7 +553,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "公顷转平方公里。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "公顷转平方公里。**Excel自定义函数**")]
         public static object DWHS公顷转平方公里(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -563,7 +563,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。**Excel自定义函数**")]
         public static object DWHS中国亩转公顷(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -573,7 +573,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。**Excel自定义函数**")]
         public static object DWHS摄氏度转华氏度(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -582,7 +582,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "中国亩转公顷。**Excel自定义函数**")]
         public static object DWHS华氏度转摄氏度(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -591,7 +591,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "贵金属的金衡盎司转克。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "贵金属的金衡盎司转克。**Excel自定义函数**")]
         public static object DWHS金衡盎司转克(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -600,7 +600,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "日常普通常规的常衡盎司转克。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "日常普通常规的常衡盎司转克。**Excel自定义函数**")]
         public static object DWHS常衡盎司转克(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -609,7 +609,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "日常普通常规的常衡磅转克。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "日常普通常规的常衡磅转克。**Excel自定义函数**")]
         public static object DWHS常衡磅转克(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)
@@ -618,7 +618,7 @@ namespace ExcelCuiHuaJi
             return ConVertByRatio(ratio, inputNumber, num_digits);
         }
 
-        [ExcelFunction(Category = "单位换算", Description = "贵金属的金衡磅转克。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "单位换算", Description = "贵金属的金衡磅转克。**Excel自定义函数**")]
         public static object DWHS金衡磅转克(
             [ExcelArgument(Description = "输入要转换的数字")] double inputNumber,
             [ExcelArgument(Description = "需要保留小数点位数，省略不进行小数位数四舍五入")] object num_digits)

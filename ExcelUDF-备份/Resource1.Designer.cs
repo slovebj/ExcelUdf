@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExcelCuiHuaJi {
+namespace ExcelUDF {
     using System;
     
     

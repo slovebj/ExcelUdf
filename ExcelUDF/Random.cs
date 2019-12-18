@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "随机函数",IsVolatile =true, Description = "根据传入的字符长度，随机返回传入个数的任意26个大写字母。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数",IsVolatile =true, Description = "根据传入的字符长度，随机返回传入个数的任意26个大写字母。**Excel自定义函数**")]
         public static string RandEnglishCharsUpper(
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)
         {
@@ -23,7 +23,7 @@ namespace ExcelCuiHuaJi
             return new string(listChar.ToArray());
         }
 
-        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数的任意26个小写字母。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数的任意26个小写字母。**Excel自定义函数**")]
         public static string RandEnglishCharsLower(
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)
         {
@@ -37,7 +37,7 @@ namespace ExcelCuiHuaJi
             return new string(listChar.ToArray());
         }
 
-        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数的任意26个字母，不分大小写。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数的任意26个字母，不分大小写。**Excel自定义函数**")]
         public static string RandEnglishChars(
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)
         {
@@ -62,7 +62,7 @@ namespace ExcelCuiHuaJi
             return new string(listChar.ToArray());
         }
 
-        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数任意的0-9数字。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数", IsVolatile = true, Description = "根据传入的字符长度，随机返回传入个数任意的0-9数字。**Excel自定义函数**")]
         public static string RandNumberString(
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)
         {
@@ -77,7 +77,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "随机函数",  Description = "根据传入的字符长度，随机返回传入个数的英文字母或数字，即【0-9，a-z,A-Z】。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数",  Description = "根据传入的字符长度，随机返回传入个数的英文字母或数字，即【0-9，a-z,A-Z】。**Excel自定义函数**")]
         public static string RandNumberOrEnglishchars(
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)
         {
@@ -107,7 +107,7 @@ namespace ExcelCuiHuaJi
             return new string(listChar.ToArray());
         }
 
-        [ExcelFunction(Category = "随机函数",  Description = "根据传入的字符长度，随机返回传入个数的英文字母或数字，即【0-9，a-z,A-Z】。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "随机函数",  Description = "根据传入的字符长度，随机返回传入个数的英文字母或数字，即【0-9，a-z,A-Z】。**Excel自定义函数**")]
         public static object RandcharsByCustom(
              [ExcelArgument(Description = "传入指定范围内的字符，如0-3为0123，b-d为bcd，多个条件之间用逗号分开")] string customchars ,
             [ExcelArgument(Description = "传入需要返回的字符个数")] int charNum = 1)

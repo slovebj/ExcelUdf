@@ -11,12 +11,12 @@ using System.Xml.Linq;
 using System.IO;
 
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "分组计算", Description = "分组最小值，实现的效果类似MINIF函数，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组最小值，实现的效果类似MINIF函数，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组最小值(
                   [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
                   [ExcelArgument(Description = "求最小值列区域")] object[,] minRange
@@ -40,7 +40,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组最大值，实现的效果类似MAXIF函数，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组最大值，实现的效果类似MAXIF函数，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组最大值(
           [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
           [ExcelArgument(Description = "求最大值列区域")] object[,] maxRange
@@ -65,7 +65,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组平均值，实现的效果类似AVERAGEIF函数，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组平均值，实现的效果类似AVERAGEIF函数，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组平均值(
             [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
             [ExcelArgument(Description = "求平均值列区域")] object[,] avgRange
@@ -89,7 +89,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result.OrderBy(s => s.Key).Select(s => (object)s.Value).ToArray(), "L");
         }
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求和，实现的效果类似SUMIF函数，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求和，实现的效果类似SUMIF函数，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组求和(
       [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object groupRange,
       [ExcelArgument(Description = "求和列区域")] object[,] sumRange
@@ -113,7 +113,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组美式排名。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组美式排名。**Excel自定义函数**")]
         public static object FZJS分组美式排名(
          [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object groupRange,
          [ExcelArgument(Description = "排名列区域")] object[,] rankRange,
@@ -150,7 +150,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result.OrderBy(s => s.Key).Select(s => (object)s.Value).ToArray(), "L");
         }
 
-        [ExcelFunction(Category = "分组计算", Description = "分组中式排名。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组中式排名。**Excel自定义函数**")]
         public static object FZJS分组中式排名(
                   [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object groupRange,
                   [ExcelArgument(Description = "排名列区域")] object[,] rankRange,
@@ -188,7 +188,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求和累计。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求和累计。**Excel自定义函数**")]
         public static object FZJS分组求和累计(
             [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
             [ExcelArgument(Description = "求和区域")] object[,] sumRange,
@@ -220,7 +220,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求末元素。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求末元素。**Excel自定义函数**")]
         public static object FZJS分组求末元素(
             [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
             [ExcelArgument(Description = "返回值区域")] object[,] returnRange,
@@ -252,7 +252,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求首元素。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求首元素。**Excel自定义函数**")]
         public static object FZJS分组求首元素(
       [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
       [ExcelArgument(Description = "返回值区域")] object[,] returnRange,
@@ -283,7 +283,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求下一元素。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求下一元素。**Excel自定义函数**")]
         public static object FZJS分组求下一元素(
               [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
               [ExcelArgument(Description = "返回值区域")] object[,] returnRange,
@@ -315,7 +315,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组求上一元素。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组求上一元素。**Excel自定义函数**")]
         public static object FZJS分组求上一元素(
               [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
               [ExcelArgument(Description = "返回值区域")] object[,] returnRange,
@@ -345,7 +345,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result.OrderBy(s => s.Key).Select(s => s.Value).ToArray(), "L");
         }
 
-        [ExcelFunction(Category = "分组计算", Description = "分组计数去重，实现的效果类似COUNTIF函固定首行绝对引用，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组计数去重，实现的效果类似COUNTIF函固定首行绝对引用，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组计数去重(
                 [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
                 [ExcelArgument(Description = "去重统计计数列区域")] object[,] distinctCountRange
@@ -369,7 +369,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组计数，实现的效果类似COUNTIF函数，但效率性能更高。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组计数，实现的效果类似COUNTIF函数，但效率性能更高。**Excel自定义函数**")]
         public static object FZJS分组计数(
                     [ExcelArgument(Description = "分组列区域1，仅能选取一列")] object[,] groupRange1,
                     [ExcelArgument(Description = "分组列区域2，仅能选取一列")] object[,] groupRange2,
@@ -397,7 +397,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result.OrderBy(s => s.Key).Select(s => (object)s.Value).ToArray(), "L");
         }
 
-        [ExcelFunction(Category = "分组计算", Description = "分组字符拼接，生成组内字符拼接列的字符拼接成一个字符串，Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组字符拼接，生成组内字符拼接列的字符拼接成一个字符串，**Excel自定义函数**")]
         public static object FZJS分组字符拼接(
                 [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object[,] groupRange,
                 [ExcelArgument(Description = "拼接字符串的列区域")] object[,] joinString,
@@ -433,7 +433,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(result.OrderBy(s => s.Key).Select(s => s.Value).ToArray(), "L");
         }
 
-        [ExcelFunction(Category = "分组计算", Description = "分组序号，生成组内不重复的递增序号，Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组序号，生成组内不重复的递增序号，**Excel自定义函数**")]
         public static object FZJS分组序号(
                  [ExcelArgument(Description = "分组列区域，当有多列作为分组条件时，需使用【FZGetMultiColRange】函数输入")] object groupRange,
                  [ExcelArgument(Description = "排序列区域1")] object[,] orderRange1,
@@ -460,7 +460,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "分组计算", Description = "分组列合并，用于分组列有多列时，需要使用此函数来引用多列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "分组计算", Description = "分组列合并，用于分组列有多列时，需要使用此函数来引用多列。**Excel自定义函数**")]
         public static object FZJS分组列合并(
             [ExcelArgument(Description = "分组列区域1，仅能选取一列")] object[,] groupRange1,
             [ExcelArgument(Description = "分组列区域2，仅能选取一列")] object[,] groupRange2,

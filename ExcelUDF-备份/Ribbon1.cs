@@ -29,7 +29,7 @@ using ExcelDna.IntelliSense;
 // 有关详细信息，请参见 Visual Studio Tools for Office 帮助中的功能区 XML 文档。
 
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     [ComVisible(true)]
     public class Ribbon1 : ExcelRibbon

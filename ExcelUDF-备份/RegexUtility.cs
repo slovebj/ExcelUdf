@@ -6,7 +6,7 @@ using ExcelDna.Integration;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
@@ -20,7 +20,7 @@ namespace ExcelCuiHuaJi
         //--isRightToLeft，从右往左匹配。
         //--returnNum，反回split数组中的第几个元素，索引从0开始
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，Pattern里传入（）来分组。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，Pattern里传入（）来分组。**Excel自定义函数**")]
         public static string RegexMatchGroup(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -80,7 +80,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。**Excel自定义函数**")]
         public static object RegexMatchGroups(
    [ExcelArgument(Description = "输入的字符串")] string input,
    [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -133,7 +133,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。**Excel自定义函数**")]
         public static object RegexMatchGroupsFromFile(
   [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
   [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -159,7 +159,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，不含Group组匹配。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，不含Group组匹配。**Excel自定义函数**")]
         public static string RegexMatch(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -202,7 +202,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，返回多个结果，不含Group组匹配。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，返回多个结果，不含Group组匹配。**Excel自定义函数**")]
         public static object RegexMatchs(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -246,7 +246,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，返回多个结果，不含Group组匹配。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，返回多个结果，不含Group组匹配。**Excel自定义函数**")]
         public static object RegexMatchsFromFile(
    [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
    [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -269,7 +269,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则替换。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则替换。**Excel自定义函数**")]
         public static string RegexReplace(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -312,7 +312,7 @@ namespace ExcelCuiHuaJi
         /// <param name="isECMAScript"></param>
         /// <param name="isRightToLeft"></param>
         /// <returns></returns>
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则分割。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则分割。**Excel自定义函数**")]
         public static string RegexSplit(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -365,7 +365,7 @@ namespace ExcelCuiHuaJi
         /// <param name="isECMAScript"></param>
         /// <param name="isRightToLeft"></param>
         /// <returns></returns>
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则分割。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则分割。**Excel自定义函数**")]
         public static object RegexSplits(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,
@@ -402,7 +402,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配判断。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配判断。**Excel自定义函数**")]
         public static bool RegexIsMatch(
            [ExcelArgument(Description = "输入的字符串")] string input,
            [ExcelArgument(Description = "匹配规则")] string pattern,

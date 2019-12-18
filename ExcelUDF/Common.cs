@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using ExcelDna.Integration;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     class Common
     {

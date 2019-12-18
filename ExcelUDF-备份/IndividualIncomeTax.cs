@@ -11,13 +11,13 @@ using System.Xml.Linq;
 using System.IO;
 
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
 
-        [ExcelFunction(Category = "个人所得税", Description = "计算年终奖个人所得税，旧版3500起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "计算年终奖个人所得税，旧版3500起征的。**Excel自定义函数**")]
         public static object GS计算年终奖个人所得税3500(
             [ExcelArgument(Description = "年终奖金额")] double yearAward,
             [ExcelArgument(Description = "税前扣除社保等专项附加后的计税收入金额")] double income,
@@ -36,7 +36,7 @@ namespace ExcelCuiHuaJi
             return taxableIncome * rateInfo.Rate - rateInfo.Deduction;
         }
 
-        [ExcelFunction(Category = "个人所得税", Description = "计算工资个人所得税，旧版3500起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "计算工资个人所得税，旧版3500起征的。**Excel自定义函数**")]
         public static object GS计算工资个人所得税3500(
             [ExcelArgument(Description = "税前扣除社保等专项附加后的计税收入金额")] double income,
             [ExcelArgument(Description = "起征点，一般为3500，外籍为4800，默认不填为3500")] double baseLine = 3500
@@ -52,7 +52,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "个人所得税", Description = "计算工资个人所得税，新版5000起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "计算工资个人所得税，新版5000起征的。**Excel自定义函数**")]
         public static object GS计算工资个人所得税5000(
             [ExcelArgument(Description = "税前扣除社保等专项附加后的计税收入金额")] double income
          )
@@ -63,7 +63,7 @@ namespace ExcelCuiHuaJi
             return CalculateRate(income, baseLine, Properties.Settings.Default.GS5000);
         }
 
-        [ExcelFunction(Category = "个人所得税", Description = "根据个税金额反算税前收入，新版5000起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "根据个税金额反算税前收入，新版5000起征的。**Excel自定义函数**")]
         public static object GS根据个税金额反算税前收入3500(
                     [ExcelArgument(Description = "个人所得税缴纳金额")] double tax,
             [ExcelArgument(Description = "起征点，一般为3500，外籍为4800，默认不填为3500")] double baseLine = 3500
@@ -79,7 +79,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "个人所得税", Description = "根据个税金额反算税前收入，新版5000起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "根据个税金额反算税前收入，新版5000起征的。**Excel自定义函数**")]
         public static object GS根据个税金额反算税前收入5000(
           [ExcelArgument(Description = "个人所得税缴纳金额")] double tax
          )
@@ -88,7 +88,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "个人所得税", Description = "根据税后收入反算税前收入，旧版3500起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "根据税后收入反算税前收入，旧版3500起征的。**Excel自定义函数**")]
         public static object GS根据税后收入反算税前收入3500(
             [ExcelArgument(Description = "税后收入金额")] double incomeAfterTax,
             [ExcelArgument(Description = "起征点，一般为3500，外籍为4800，默认不填为3500")] double baseLine = 3500
@@ -103,7 +103,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "个人所得税", Description = "根据税后收入反算税前收入，新版5000起征的。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "个人所得税", Description = "根据税后收入反算税前收入，新版5000起征的。**Excel自定义函数**")]
         public static object GS根据税后收入反算税前收入5000(
             [ExcelArgument(Description = "税后收入金额")] double incomeAfterTax
  )

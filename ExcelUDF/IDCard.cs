@@ -10,12 +10,12 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Xml.Linq;
 using System.IO;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
         private static XElement element = XElement.Load(new StringReader(Resource1.行政区划数据库));
-        [ExcelFunction(Category = "身份证相关",IsThreadSafe =true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取地区信息。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关",IsThreadSafe =true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取地区信息。**Excel自定义函数**")]
         public static object SFZGetAreaInfo(
         [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input,
         [ExcelArgument(Description = "是否拆开横向存放多个单元格数组公式返回结果，默认为false,只返回一个单元格的值")] bool isSplit
@@ -73,7 +73,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属生肖。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属生肖。**Excel自定义函数**")]
         public static object SFZGetShengXiao(
                 [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
                     )
@@ -98,7 +98,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属干支年份。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属干支年份。**Excel自定义函数**")]
         public static object SFZGetGanZhiYear(
         [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
             )
@@ -125,7 +125,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属星座。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取所属星座。**Excel自定义函数**")]
         public static object SFZGetXingZuo(
         [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
                             )
@@ -151,7 +151,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取性别。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取性别。**Excel自定义函数**")]
         public static object SFZGetSex(
                 [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
                                     )
@@ -171,7 +171,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取当前年龄，过了生日才算一年。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），获取当前年龄，过了生日才算一年。**Excel自定义函数**")]
         public static object SFZGetCurrentAge(
          [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
                                             )
@@ -189,7 +189,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），取出生日期。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "输入身份证号码（15位或18位，其他数字返回错误），取出生日期。**Excel自定义函数**")]
         public static object SFZGetBirthday(
                  [ExcelArgument(Description = "输入身份证号码，15位或18位，其他数字返回错误")] object input
                                                     )
@@ -209,7 +209,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "15位身份证号转18位，输入非15位或18数字返回错误.Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "身份证相关", IsThreadSafe = true, Description = "15位身份证号转18位，输入非15位或18数字返回错误.**Excel自定义函数**")]
         public static object SFZConvert15To18(
            [ExcelArgument(Description = "输入15位的身份证号码，输入非15或18位数字返回错误")] object input)
         {

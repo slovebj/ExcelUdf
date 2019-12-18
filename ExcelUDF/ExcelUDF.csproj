@@ -87,7 +87,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Html.cs" />
-    <Compile Include="IndividualIncomeTax.cs" />
     <Compile Include="FuZhu.cs" />
     <Compile Include="LookupReference.cs" />
     <Compile Include="GroupCal.cs" />
@@ -106,7 +105,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Solver.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Conversions.cs" />
     <Compile Include="ChineseReference.cs" />

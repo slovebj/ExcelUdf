@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using IExcel = Microsoft.Office.Interop.Excel;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
-        [ExcelFunction(Category = "序列函数", Description = "选定区域内容重复，如选定区域内容为1,2,3，重复3次结果为123123123。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "序列函数", Description = "选定区域内容重复，如选定区域内容为1,2,3，重复3次结果为123123123。**Excel自定义函数**")]
         public static object XL重复选定区域(
             [ExcelArgument(Description = "选定要重复的区域")] object selectRange,
             [ExcelArgument(Description = "若选定的区域为多列时，是先按行还是按列排列，默认为按列，TRUE为按行")] bool IsByRows,
@@ -67,7 +67,7 @@ namespace ExcelCuiHuaJi
 
 
 
-        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成重复循环序列，从输入函数公式开始向下填充AAABBBCCC这样结构的数据序列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成重复循环序列，从输入函数公式开始向下填充AAABBBCCC这样结构的数据序列。**Excel自定义函数**")]
         public static object XL重复循环列字母(
                        [ExcelArgument(Description = "开始列字母")] string firstColChar,
                        [ExcelArgument(Description = "重复的次数")] int repeatTimes,
@@ -100,7 +100,7 @@ namespace ExcelCuiHuaJi
             return listColChars;
         }
 
-        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成重复循环序列，从输入函数公式开始向下填充111222333这样结构的数据序列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成重复循环序列，从输入函数公式开始向下填充111222333这样结构的数据序列。**Excel自定义函数**")]
         public static object XL重复循环整数(
            [ExcelArgument(Description = "开始序号")] int firstIndex,
            [ExcelArgument(Description = "重复的次数")] int repeatTimes,
@@ -152,7 +152,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成间隔循环序列，从输入函数公式开始向下填充123123123这样结构的数据序列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成间隔循环序列，从输入函数公式开始向下填充123123123这样结构的数据序列。**Excel自定义函数**")]
         public static object XL间隔循环整数(
            [ExcelArgument(Description = "开始序号")] int firstIndex,
            [ExcelArgument(Description = "结束序号")] int lastIndex,
@@ -167,7 +167,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成间隔循环序列，从输入函数公式开始向下填充ABCABCABC这样结构的数据序列。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "序列函数", IsMacroType = true, Description = "生成间隔循环序列，从输入函数公式开始向下填充ABCABCABC这样结构的数据序列。**Excel自定义函数**")]
         public static object XL间隔循环列字母(
           [ExcelArgument(Description = "开始序号")] string firstColChar,
           [ExcelArgument(Description = "结束序号")] string lastColChar,

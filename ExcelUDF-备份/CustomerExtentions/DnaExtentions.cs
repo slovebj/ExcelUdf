@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using ExcelDna.Integration;
 using Excel = Microsoft.Office.Interop.Excel;
-namespace ExcelCuiHuaJi.CustomerExtentions
+namespace ExcelUDF.CustomerExtentions
 {
     class DnaExtentions
     {

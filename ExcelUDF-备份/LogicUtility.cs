@@ -7,12 +7,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "逻辑判断_日期", Description = "是否为日期，EXCEL可识别的日期为从1900-01-00至9999-12-31，即数字为0至2958465之间。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_日期", Description = "是否为日期，EXCEL可识别的日期为从1900-01-00至9999-12-31，即数字为0至2958465之间。**Excel自定义函数**")]
         public static bool IsDate(
             [ExcelArgument(Description = "输入的值")] object input)
         {
@@ -43,7 +43,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "逻辑判断_日期", Description = "是否为日期，EXCEL可识别的日期为从1900-01-00至9999-12-31，即数字为0至2958465之间。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_日期", Description = "是否为日期，EXCEL可识别的日期为从1900-01-00至9999-12-31，即数字为0至2958465之间。**Excel自定义函数**")]
         public static object IsDateBetween(
             [ExcelArgument(Description = "输入的值")] object input,
              [ExcelArgument(Description = "开始日期")] object optstartDate,
@@ -121,7 +121,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断查找字符是否在源字符串内，如果存在返回true，否则返回false，示例：lookupValue:AB,sourceString:ABCDE,AB在ABCDE中，结果返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断查找字符是否在源字符串内，如果存在返回true，否则返回false，示例：lookupValue:AB,sourceString:ABCDE,AB在ABCDE中，结果返回true。**Excel自定义函数**")]
         public static bool IsTextContains(
             [ExcelArgument(Description = "查找字符串，如ABCDE")] string sourceString,
             [ExcelArgument(Description = "查找条件，如AB")] string lookupValue,
@@ -139,7 +139,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断查找字符是否在源字符串内，如果存在返回true，否则返回false，示例：lookupValue:AB,sourceString:ABCDE,AB在ABCDE中，结果返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断查找字符是否在源字符串内，如果存在返回true，否则返回false，示例：lookupValue:AB,sourceString:ABCDE,AB在ABCDE中，结果返回true。**Excel自定义函数**")]
         public static bool IsTextContainsWithMultiLookupValues(
             [ExcelArgument(Description = "查找字符串，如ABCDE")] string sourceString,
             [ExcelArgument(Description = "多个查找条件，可以引用多个连续单元格或以英文逗号分隔的一个字符串，如A,B")] object lookupValues,
@@ -159,7 +159,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符是否在指定的字符串集合内，如果存在返回true，否则返回false，示例：sourceStrings=AB,CD,E,lookupValue=CD,strSplit=',',CD在｛AB，CD，E｝的集合中，返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符是否在指定的字符串集合内，如果存在返回true，否则返回false，示例：sourceStrings=AB,CD,E,lookupValue=CD,strSplit=',',CD在｛AB，CD，E｝的集合中，返回true。**Excel自定义函数**")]
         public static bool IsTextContainsWithSplit(
         [ExcelArgument(Description = "查找字符串集合")] string sourceStrings,
         [ExcelArgument(Description = "查找条件")] string lookupValue,
@@ -189,7 +189,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有查找条件相同的，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，BCD，EDF｝,ABC在sourceRange中，结果返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有查找条件相同的，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，BCD，EDF｝,ABC在sourceRange中，结果返回true。**Excel自定义函数**")]
         public static object IsRangeContains(
                 [ExcelArgument(Description = "查找的区域如：A1：A3｛ABC，BCD，EDF}", AllowReference = true)] object[,] sourceRange,
                 [ExcelArgument(Description = "查找条件，如B1的值ABC")] object lookupValue,
@@ -230,7 +230,7 @@ namespace ExcelCuiHuaJi
             }
         }
 
-        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有查找条件相同的，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，BCD，EDF｝,ABC在sourceRange中，结果返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有查找条件相同的，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，BCD，EDF｝,ABC在sourceRange中，结果返回true。**Excel自定义函数**")]
         public static object IsRangeContainsWithMultiLookupValues(
               [ExcelArgument(Description = "查找的区域如：A1：A3｛ABC，BCD，EDF}", AllowReference = true)] object[,] sourceRange,
               [ExcelArgument(Description = "多个查找条件，可以引用多个连续单元格或以英文逗号分隔的一个字符串，如A,B")] object lookupValues,
@@ -266,7 +266,7 @@ namespace ExcelCuiHuaJi
 
         }
 
-        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有至少2个满足查找条件的值，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，ABC，EDF｝,ABC在sourceRange中出现2次，结果返回true。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_区域", Description = "判断查找区域内查找是否有至少2个满足查找条件的值，如果存在返回true，否则返回false，示例：lookupValue:ABC,sourceRange:A1：A3｛ABC，ABC，EDF｝,ABC在sourceRange中出现2次，结果返回true。**Excel自定义函数**")]
         public static object IsRangeContainsDuplicatedValue(
         [ExcelArgument(Description = "查找的区域如：A1：A3｛ABC，ABC，EDF｝")] object[,] sourceRange,
         [ExcelArgument(Description = "查找条件，如B1的值ABC")] object lookupValue,
@@ -318,7 +318,7 @@ namespace ExcelCuiHuaJi
         }
 
 
-        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符串是否以某字符开头。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符串是否以某字符开头。**Excel自定义函数**")]
         public static bool IsTextStartsWith(
             [ExcelArgument(Description = "输入待查找的字符串")] string inputStr,
             [ExcelArgument(Description = "需要查找的开头部分的字符串值")] string value
@@ -327,7 +327,7 @@ namespace ExcelCuiHuaJi
             return inputStr.StartsWith(value);
         }
 
-        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符串是否以某字符开头。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "逻辑判断_文本", Description = "判断字符串是否以某字符开头。**Excel自定义函数**")]
         public static bool IsTextEndsWith(
             [ExcelArgument(Description = "输入待查找的字符串")] string inputStr,
             [ExcelArgument(Description = "需要查找的结尾部分的字符串值")] string value

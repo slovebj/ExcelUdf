@@ -6,7 +6,7 @@ using ExcelDna.Integration;
 using ExcelDna.IntelliSense;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
    public  class AddIn : IExcelAddIn
     {

@@ -7,12 +7,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.International.Converters.TraditionalChineseToSimplifiedConverter;
 using Excel = Microsoft.Office.Interop.Excel;
-namespace ExcelCuiHuaJi
+namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "规划求解类", Description = "分组凑数，从源数据列中，抽取出指定的项目组合，使其求和数最大限度接近分组的大小。Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "规划求解类", Description = "分组凑数，从源数据列中，抽取出指定的项目组合，使其求和数最大限度接近分组的大小。**Excel自定义函数**")]
         public static object CouShuWithGroupFromOrTools(
                                                    [ExcelArgument(Description = "需要分组的原始数据单元格区域，精度为最多4位小数点，多于4位将截断")] object[] srcRange,
                                                    [ExcelArgument(Description = "限定组的上限的单元格区域，可选多个单元格代表分多个组，组的大小可不相同，尽量较难组合的放最上面优先对其组合")] object[] groupeRange
@@ -38,7 +38,7 @@ namespace ExcelCuiHuaJi
             return Common.ReturnDataArray(results.Select(s => s).ToArray(), "L");
 
         }
-        [ExcelFunction(Category = "规划求解类", Description = "分组凑数，从源数据列中，抽取出指定的项目组合，使其求和数最大限度接近分组的大小。大量参考EH香川群子代码，Excel催化剂出品，必属精品！")]
+        [ExcelFunction(Category = "规划求解类", Description = "分组凑数，从源数据列中，抽取出指定的项目组合，使其求和数最大限度接近分组的大小。大量参考EH香川群子代码，**Excel自定义函数**")]
         public static object CouShuWithGroupFromEH(
                                            [ExcelArgument(Description = "需要分组的原始数据单元格区域，精度为最多4位小数点，多于4位将截断")] object[] srcRange,
                                            [ExcelArgument(Description = "限定组的上限的单元格区域，可选多个单元格代表分多个组，组的大小可不相同，尽量较难组合的放最上面优先对其组合")] object[] groupeRange

@@ -5,36 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.International.Converters.TraditionalChineseToSimplifiedConverter;
 namespace ExcelUDF
 {
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "中文相关", Description = "繁体转简体。**Excel自定义函数**")]
-        public static object TraditionalChineseToSimplified(
-                                                    [ExcelArgument(Description = "输入繁体中文字符")] string inputString
-                                                    )
-        {
-
-            return ChineseConverter.Convert(inputString, ChineseConversionDirection.TraditionalToSimplified);
-        }
-
-
-
-        [ExcelFunction(Category = "中文相关", Description = "简体转繁体。**Excel自定义函数**")]
-        public static object SimplifiedChieseToTraditional(
-                                            [ExcelArgument(Description = "输入简体中文字符")] string inputString
-                                            )
-        {
-
-            return ChineseConverter.Convert(inputString, ChineseConversionDirection.SimplifiedToTraditional);
-        }
-
-
-
         [ExcelFunction(Category = "中文相关", Description = "数字转换为多个单元格存放的效果，财务用途。**Excel自定义函数**")]
-        public static object NumberConvertToMultiCells(
+        public static object NumToMultiCells(
             [ExcelArgument(Description = "需要拆分的原始数字")] double inputNumber,
             [ExcelArgument(Description = "拆分的总列数，含角分。拆分到亿为单位的话为11")] int colNum,
             [ExcelArgument(Description = "拆分的总列数，含角分。拆分到亿为单位的话为11")] bool hasLeadingZero
@@ -70,7 +47,7 @@ namespace ExcelUDF
 
 
         [ExcelFunction(Category = "中文相关", Description = "数字转换为大写中文金额。**Excel自定义函数**")]
-        public static string NumberConvertToChineseCapitalAmount(
+        public static string NumToCnCapital(
             [ExcelArgument(Description = "传入需要转换大写的数字")] double inputNumber)
         {
 
@@ -133,7 +110,7 @@ namespace ExcelUDF
 
         }
         [ExcelFunction(Category = "中文相关", Description = "中文转全拼。**Excel自定义函数**")]
-        public static string ChineseConvertToPinYinAllSpell(
+        public static string CnToPinYin(
             [ExcelArgument(Description = "转入需要转换拼音的中文字符串")] string inputChineseChar,
             [ExcelArgument(Description = "中文拼音间的间隔符")] string separateString
             )
@@ -141,15 +118,15 @@ namespace ExcelUDF
             return PingYinHelper.ConvertToAllSpell(inputChineseChar, separateString);
         }
 
-        [ExcelFunction(Category = "中文相关", Description = "中文转首字母拼单。**Excel自定义函数**")]
-        public static string ChineseConvertToPinYinFirstSpell([ExcelArgument(Description = "转入需要转换拼音的中文字符串")] string inputChineseChar)
+        [ExcelFunction(Category = "中文相关", Description = "中文转拼音后取大写首字母。**Excel自定义函数**")]
+        public static string CnToPinYinFirstSpell([ExcelArgument(Description = "传入需要转换拼音的中文字符串")] string inputChineseChar)
         {
             return PingYinHelper.GetFirstSpell(inputChineseChar);
         }
 
 
         [ExcelFunction(Category = "中文相关", Description = "大写中文金额转换为数字。**Excel自定义函数**")]
-        public static decimal ChineseCapitalAmountConvertToNumber([ExcelArgument(Description = "传入需要转换大写的数字")] string inputChinseUpperMoney)
+        public static decimal CnCapitalToNum([ExcelArgument(Description = "传入需要转换为数字的大写中文金额")] string inputChinseUpperMoney)
         {
 
             string beforeYiString;
@@ -331,7 +308,7 @@ namespace ExcelUDF
         /// <returns></returns>
         internal static string GetFirstSpell(string strChinese)
         {
-            //NPinyin.Pinyin.GetInitials(strChinese)  有Bug  洺无法识别
+            //NPinyin.Pinyin.GetInitials(strChinese)  有Bug  暂无法识别
             //return NPinyin.Pinyin.GetInitials(strChinese);
 
             try

@@ -188,7 +188,7 @@ namespace ExcelUDF
             }
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前后的字符清除。**Excel自定义函数**")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其实行前后的字符清除。**Excel自定义函数**")]
         public static object TextTrim(
             [ExcelArgument(Description = "待前后清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的单个字符串")] object trimValues
@@ -198,7 +198,7 @@ namespace ExcelUDF
             return inputString.Trim(trimList.Select(s => Convert.ToChar(s.Trim().Substring(0, 1))).ToArray());
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。**Excel自定义函数**")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其实行前面的字符清除。**Excel自定义函数**")]
         public static object TextTrimStart(
             [ExcelArgument(Description = "待前面清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的单个字符串")] object trimValues
@@ -209,7 +209,7 @@ namespace ExcelUDF
             return inputString.TrimStart(trimList.Select(s => Convert.ToChar(s.Trim().Substring(0, 1))).ToArray());
         }
 
-        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其时行前面的字符清除。**Excel自定义函数**")]
+        [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "根据传入的待清洗字符，对其实行前面的字符清除。**Excel自定义函数**")]
         public static object TextTrimEnd(
             [ExcelArgument(Description = "待前面清除内容的字符串")] string inputString,
             [ExcelArgument(Description = "输入需要清除的字符串，可以引用多个连续单元格或以英文逗号分隔的一个ASCII字符串")] object trimValues
@@ -242,7 +242,7 @@ namespace ExcelUDF
         }
         [ExcelFunction(Category = "文本处理",IsThreadSafe =true, Description = "字符串拼接函数，StringJoinRange：传入的需要写入目标单元格的数据区域，strSplit：用来分割的字符。**Excel自定义函数**")]
         //AllowReference = true把传进来的EXCEL区域识别出来。
-        public static string StringJoin(
+        public static string StrJoin(
             [ExcelArgument(Description = "输入要拼接的字符串区域")] object StringJoinRange,
             [ExcelArgument(Description = "输入分隔字符串")] string strSplit,
             [ExcelArgument(Description = "包含着在拼接的字符的部分，如双引号、单引号包含着，默认不输为不需要包含的字符")] string strSurround)
@@ -254,7 +254,7 @@ namespace ExcelUDF
         }
 
     [ExcelFunction(Category = "文本处理", IsThreadSafe = true, Description = "字符串拼接函数，在查找的区域查找对应条件下的值，最终用分隔符拼接起来，类似系统函数SUMIF、COUNTIF。**Excel自定义函数**")]
-    public static object StringJoinIf(
+    public static object StrJoinIf(
             [ExcelArgument(Description = "查找的区域，若有多列引用，请使用FZGetMultiColRange函数输入")] object[,] lookupRange,
             [ExcelArgument(Description = "用于验证查找区域是否符合的条件")] string criteria,
             [ExcelArgument(Description = "要拼接的字符串区域，请使用FZGetMultiColRange函数输入")] object[,] StringJoinRange,

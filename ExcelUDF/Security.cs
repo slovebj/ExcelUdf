@@ -11,7 +11,7 @@ namespace ExcelUDF
     {
 
         [ExcelFunction(Category = "加密解密", Description = "MD5加密。**Excel自定义函数**")]
-        public static string Md5String(
+        public static string Md5Str(
              [ExcelArgument(Description = "传入要加密的字符串")] string input,
              [ExcelArgument(Description = "md5返回字符长度，16位或32位")] bool isCodeLength16
             )
@@ -34,7 +34,7 @@ namespace ExcelUDF
 
         //加密
         [ExcelFunction(Category = "加密解密", Description = "RSA加密函数。**Excel自定义函数**")]
-        public static string EncryptValue(
+        public static string RsaEncrypt(
             [ExcelArgument(Description = "传入要加密的字符串")] string input,
             [ExcelArgument(Description = "密码因子")] string passwordChars
             )
@@ -51,7 +51,7 @@ namespace ExcelUDF
 
         //解密
         [ExcelFunction(Category = "加密解密", Description = "RSA解密函数。**Excel自定义函数**")]
-        public static string DecryptValue(
+        public static string RsaDecrypt(
             [ExcelArgument(Description = "传入要解密的字符串")] string input,
             [ExcelArgument(Description = "密码因子")] string passwordChars)
         {

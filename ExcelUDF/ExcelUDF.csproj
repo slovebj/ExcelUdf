@@ -81,11 +81,6 @@
   <ItemGroup>
     <Compile Include="AddIn.cs" />
     <Compile Include="ArrayResizer.cs" />
-    <Compile Include="Connected Services\KnapsacksService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Html.cs" />
     <Compile Include="FuZhu.cs" />
     <Compile Include="LookupReference.cs" />
@@ -110,7 +105,6 @@
     <Compile Include="ChineseReference.cs" />
     <Compile Include="CustomerExtentions\DnaExtentions.cs" />
     <Compile Include="CustomerExtentions\ExcelReferenceExtentions.cs" />
-    <Compile Include="RangeSetUtility.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="IoUtility.cs" />
     <Compile Include="LogicUtility.cs" />
@@ -123,10 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\KnapsacksService\ExcelCuiHuaJi.KnapsacksService.ArrayOfAnyType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\KnapsacksService\KnapsacksService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\ExcelDna.Build.props" />
     <None Include="ExcelUDF-AddIn.dna">
@@ -139,24 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\KnapsacksService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KnapsacksService\KnapsacksService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KnapsacksService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KnapsacksService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\KnapsacksService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource1.resx">

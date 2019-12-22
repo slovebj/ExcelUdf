@@ -42,6 +42,30 @@
               <item id="qianliao" image="qianliao"/>
             </gallery>            
           </group>
+          <group id='MyGroup' label='菜单和按钮'>
+            <menu id="RootMenu" label="多级菜单" imageMso="ReviewCompareMenu" size="large">
+              <menu id="subMenu1" label="子菜单1" image='ppl.png'  >
+                <menu id="subMenu1-1" label="二级子菜单" image='ppl.png'  >
+                  <button id="Menu1-1-1" label="Up" imageMso="OutlineMoveUp" onAction='button_Click' tag='Up'/>
+                  <button id="Menu1-1-2" label="GoTo" imageMso="GoTo" onAction='button_Click' tag='Goto'/>
+                  <button id="Menu1-1-3" label="Down" imageMso="OutlineMoveDown" onAction='button_Click' tag='Down'/>
+                </menu>
+              </menu>
+              <menu id="subMenu2" label="子菜单2" image='ppl.png'  >
+                <menu id="subMenu2-1" label="子菜单" image='ppl.png'  >
+                  <button id="Menu2-1-1" label="Up" imageMso="OutlineMoveUp" onAction='button_Click' tag='Up'/>
+                  <button id="Menu2-1-2" label="GoTo" imageMso="GoTo" onAction='button_Click' tag='Goto'/>
+                  <button id="Menu2-1-3" label="Down" imageMso="OutlineMoveDown" onAction='button_Click' tag='Down'/>
+                </menu>
+              </menu>
+              <menuSeparator id="MySeparator" />
+              <button id="MenuButton" label="按钮" image='ppl.png' onAction='button_Click' tag='button'/>
+            </menu>
+            <separator id="separator1" />
+            <!-- 使用RunTagMacro，可以调用vba中的函数,也可以调用XLL中的ExcelCommand -->
+            <button id='TestRunTag' label='测试Run Tag' image='ppl.png' size='normal' onAction='RunTagMacro' tag='ShowVer' />
+            <button id='TestButton' image='ppl.png' getLabel='Button_getLabel' size='normal' onAction='button_Click' screentip="This is the screentip of button3" supertip="This is the supertip of button3"/>
+          </group >
           <group id='SampleGroup' label='CTP Control'>
             <button id='ShowCTP' label='Show CTP' getImage='Button_getImage' size='large' onAction='OnShowCTP' />
             <button id='DeleteCTP' label='Delete CTP' getImage='Button_getImage' size='large' onAction='OnDeleteCTP' />

@@ -88,5 +88,19 @@ namespace ExcelUDF
 
 
         }
+        #region CustomTaskPane
+        public void OnShowCTP(IRibbonControl control)
+        {
+            string hwnd = ((dynamic)ExcelDnaUtil.Application).ActiveWindow.Hwnd.ToString();
+            CTPManager.Instance.ShowCTP(hwnd);
+        }
+
+        public void OnDeleteCTP(IRibbonControl control)
+        {
+            string hwnd = ((dynamic)ExcelDnaUtil.Application).ActiveWindow.Hwnd.ToString();
+            CTPManager.Instance.DeleteCTP(hwnd);
+        }
+        #endregion CustomTaskPane
+
     }
 }

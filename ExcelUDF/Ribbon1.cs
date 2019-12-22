@@ -8,8 +8,9 @@ using System.Text;
 using ExcelDna.Integration.CustomUI;
 using System.Windows.Forms;
 using ExcelDna.Integration;
-using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 using ExcelDna.IntelliSense;
+using VB = Microsoft.VisualBasic;
 // TODO:   按照以下步骤启用功能区(XML)项: 
 
 // 1. 将以下代码块复制到 ThisAddin、ThisWorkbook 或 ThisDocument 类中。
@@ -41,6 +42,51 @@ namespace ExcelUDF
 
         public void AutoClose()
         {
+        }
+
+        public static void CalRd()
+        {
+            try
+            {
+                Excel.Range selection = AddIn.ExcelApp.Selection;
+                decimal[] rng = new decimal[2];
+                int i = 0;
+                foreach (Excel.Range item in selection)
+                {
+                    rng[i]= (decimal)item.Value;
+                    i++;
+                }
+                AddIn.ExcelApp.StatusBar = rng[0] + "和"+ rng[1] + "的相对偏差为："+Math.Round(Math.Abs((rng[0] - rng[1]) /(rng[0] + rng[1]) *100),2)+"%";  
+            }
+            catch (Exception)
+            {
+                AddIn.ExcelApp.StatusBar = "请选择两个数字……";
+            }
+            
+            
+        }
+
+        public static void Round5()
+        {
+            try
+            {
+                Excel.Range selection = AddIn.ExcelApp.Selection;
+                string i = VB.Interaction.InputBox("请输入要保留的小数位数：","保留位数","2");
+                foreach (Excel.Range item in selection)
+                {
+                    if (item.Value == null)
+                    {
+                        continue;
+                    }
+                    item.Value = Math.Round((decimal)item.Value, int.Parse(i));
+                }
+            }
+            catch (Exception)
+            {
+                AddIn.ExcelApp.StatusBar = "发生错误……";
+            }
+
+
         }
     }
 }

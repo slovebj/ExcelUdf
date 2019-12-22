@@ -7,7 +7,7 @@
     <ProjectGuid>{FD906055-F950-44AF-BD7D-39EEE7A96276}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelCuiHuaJi</RootNamespace>
+    <RootNamespace>ExcelUDF</RootNamespace>
     <AssemblyName>ExcelUDF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -56,6 +56,7 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NPinyin, Version=0.2.6321.26573, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NPinyin.0.2.6321.26573\lib\net20\NPinyin.dll</HintPath>
     </Reference>
@@ -81,6 +82,10 @@
   <ItemGroup>
     <Compile Include="AddIn.cs" />
     <Compile Include="ArrayResizer.cs" />
+    <Compile Include="CTPControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CTPManager.cs" />
     <Compile Include="Html.cs" />
     <Compile Include="FuZhu.cs" />
     <Compile Include="LookupReference.cs" />
@@ -141,10 +146,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.1.0.0\tools\ExcelDna.xll" "$(TargetDir)ExcelUDF-AddIn.xll*" /C /Y
-xcopy "$(TargetDir)ExcelUDF-AddIn.dna*" "$(TargetDir)ExcelUDF-AddIn64.dna*" /C /Y
+    <PostBuildEvent>xcopy "$(TargetDir)ExcelUDF-AddIn.dna*" "$(TargetDir)ExcelUDF-AddIn64.dna*" /C /Y
 xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.1.0.0\tools\ExcelDna64.xll" "$(TargetDir)ExcelUDF-AddIn64.xll*" /C /Y
-"$(SolutionDir)\packages\ExcelDna.AddIn.1.0.0\tools\ExcelDnaPack.exe" "$(TargetDir)ExcelUDF-AddIn.dna" /Y
 "$(SolutionDir)\packages\ExcelDna.AddIn.1.0.0\tools\ExcelDnaPack.exe" "$(TargetDir)ExcelUDF-AddIn64.dna" /Y</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\ExcelDna.AddIn.1.0.0\build\ExcelDna.AddIn.targets" Condition="Exists('..\packages\ExcelDna.AddIn.1.0.0\build\ExcelDna.AddIn.targets')" />

@@ -42,12 +42,17 @@
               <item id="qianliao" image="qianliao"/>
             </gallery>            
           </group>
+          <group id='SampleGroup' label='CTP Control'>
+            <button id='ShowCTP' label='Show CTP' getImage='Button_getImage' size='large' onAction='OnShowCTP' />
+            <button id='DeleteCTP' label='Delete CTP' getImage='Button_getImage' size='large' onAction='OnDeleteCTP' />
+          </group >
         </tab>
       </tabs>
     </ribbon>
     <contextMenus>
       <contextMenu idMso="ContextMenuCell">    
-        <button id="NewButton" label="快速计算" onAction="OA" imageMso="EquationInsertNew" insertBeforeMso="Cut"/>
+        <button id="CalRd" label="计算相对偏差" onAction="RunTagMacro" tag="CalRd" imageMso="CalculateNow"/>
+        <button id="Round5" label="四舍六入五成双" onAction="RunTagMacro" tag="Round5" imageMso="DecimalsDecrease"/>
       </contextMenu>
     </contextMenus>
   </customUI>

@@ -93,7 +93,7 @@
     <Compile Include="GroupCal.cs" />
     <Compile Include="Other.cs" />
     <Compile Include="Sequence.cs" />
-    <Compile Include="UnitConversion.cs" />
+    <Compile Include="DataConversion.cs" />
     <Compile Include="DateTimeReference.cs" />
     <Compile Include="IDCard.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

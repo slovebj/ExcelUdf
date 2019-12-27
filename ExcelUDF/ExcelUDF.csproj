@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="AddIn.cs" />
     <Compile Include="ArrayResizer.cs" />
+    <Compile Include="Sz.cs" />
     <Compile Include="ExcelCommand.cs" />
     <Compile Include="CTPControls.cs">
       <SubType>UserControl</SubType>

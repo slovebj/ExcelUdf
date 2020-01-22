@@ -18,7 +18,23 @@ namespace ExcelUDF
             [ExcelArgument(Description = "加标后与水样的总体积")] double v1
             )
         {
-            return Math.Round((c1 * v1 - c0*(v1 - vs))/cs/vs*100,1)+"%";
+            return Math.Round((decimal)((c1 * v1 - c0*(v1 - vs))/cs/vs*100),1)+"%";
+        }
+
+        [ExcelFunction(Category = "水质函数", Description = "检测结果整理，小于检出限的用<检出限值表示，大于检出限的保留需要的小数位数。**Excel自定义函数**")]
+        public static object SZ检测结果整理(
+            [ExcelArgument(Description = "水样检测结果")] double c0,
+            [ExcelArgument(Description = "检出限")] double dl,
+            [ExcelArgument(Description = "大于检出限时的保留位数")] int digit
+            )
+        {
+            if (c0<dl)
+            {
+                return "<" + dl;
+            }else
+            {
+                return Math.Round((decimal)c0, digit);
+            }
         }
 
     }

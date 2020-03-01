@@ -12,11 +12,11 @@ namespace ExcelUDF
     {
         [ExcelFunction(Category = "文件文件夹相关", Description = "根据给定的路径字符，合成文件路径，可以末尾无需输入路径分隔符。**Excel自定义函数**")]
         public static object PathCombine(
-   [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path1,
-   [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径径，最后的\可有可没有")] string path2,
-   [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path3,
-   [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path4,
-   [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path5)
+           [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path1,
+           [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径径，最后的\可有可没有")] string path2,
+           [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path3,
+           [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path4,
+           [ExcelArgument(Description = @"从左往右拼接的文件夹/文件名路径，最后的\可有可没有")] string path5)
         {
             List<string> paths = new List<string>();
             if (string.IsNullOrEmpty(path1.Trim()))
@@ -49,7 +49,7 @@ namespace ExcelUDF
 
         [ExcelFunction(Category = "文件文件夹相关", Description = "获取上一级的文件夹全路径。**Excel自定义函数**")]
         public static string GetDirectoryName(
-                                    [ExcelArgument(Description = "传入一个的文件或文件夹全路径字符串")] string srcFullpath)
+           [ExcelArgument(Description = "传入一个的文件或文件夹全路径字符串")] string srcFullpath)
         {
             return Path.GetDirectoryName(srcFullpath);
 

@@ -16,7 +16,8 @@ namespace ExcelUDF
         [ExcelFunction(Category = "Html解析", Description = "对网页HTML进行抓取解析！")]
         public static string HtmlNode(
             [ExcelArgument(Description = "解析的网址")] string url,
-            [ExcelArgument(Description = "xpath")] string htmlNode
+            [ExcelArgument(Description = "xpath")] string htmlNode,
+            [ExcelArgument(Description = "节点属性")] string attr
         )
         {
             if(url != null & htmlNode != null)
@@ -26,8 +27,19 @@ namespace ExcelUDF
             HtmlDocument doc = web.Load(url);
             //获得title标签节点，其子标签下的所有节点也在其中
             HtmlNode SingleNode = doc.DocumentNode.SelectSingleNode(htmlNode);
-            //获得title标签中的内容
-            return SingleNode.InnerText;
+                //获得title标签中的内容
+                if (attr == "")
+                {
+                    return SingleNode.InnerText;
+                }else if(attr == "html")
+                {
+                    return SingleNode.InnerHtml;
+                }
+                else
+                {
+                    return SingleNode.Attributes[attr].Value;
+                }
+            
             }
             else
             {

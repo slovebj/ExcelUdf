@@ -82,13 +82,13 @@ namespace ExcelUDF
 
         [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。**Excel自定义函数**")]
         public static object RegexMatchGroups(
-   [ExcelArgument(Description = "输入的字符串")] string input,
-   [ExcelArgument(Description = "匹配规则")] string pattern,
-   [ExcelArgument(Description = "确定第几个匹配返回值，索引号从0开始，第1个匹配，传入0，默认为0")] int matchNum = 0,
-   [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
-   [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
-   [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
-   [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
+            [ExcelArgument(Description = "输入的字符串")] string input,
+            [ExcelArgument(Description = "匹配规则")] string pattern,
+            [ExcelArgument(Description = "确定第几个匹配返回值，索引号从0开始，第1个匹配，传入0，默认为0")] int matchNum = 0,
+            [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
+            [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
+            [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
+            [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
         {
             try
             {
@@ -135,13 +135,13 @@ namespace ExcelUDF
 
         [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配组，返回多个结果，Pattern里传入（）来分组。**Excel自定义函数**")]
         public static object RegexMatchGroupsFromFile(
-  [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
-  [ExcelArgument(Description = "匹配规则")] string pattern,
-  [ExcelArgument(Description = "确定第几个匹配返回值，索引号从0开始，第1个匹配，传入0，默认为0")] int matchNum = 0,
-  [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
-  [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
-  [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
-  [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
+            [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
+            [ExcelArgument(Description = "匹配规则")] string pattern,
+            [ExcelArgument(Description = "确定第几个匹配返回值，索引号从0开始，第1个匹配，传入0，默认为0")] int matchNum = 0,
+            [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
+            [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
+            [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
+            [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
         {
             using (StreamReader sr = new StreamReader(fileFullPath))
             {
@@ -248,12 +248,12 @@ namespace ExcelUDF
 
         [ExcelFunction(Category = "文本处理_正则相关", Description = "正则匹配，返回多个结果，不含Group组匹配。**Excel自定义函数**")]
         public static object RegexMatchsFromFile(
-   [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
-   [ExcelArgument(Description = "匹配规则")] string pattern,
-   [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
-   [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
-   [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
-   [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
+           [ExcelArgument(Description = "从文件中传入源字符串")] string fileFullPath,
+           [ExcelArgument(Description = "匹配规则")] string pattern,
+           [ExcelArgument(Description = "确定最终返回的数据是以行（H）排列还是以列(L)排列，传入非H字符或不传参数默认为L排列。")]  string optAlignHorL = "L",
+           [ExcelArgument(Description = "是否编译，是为1，否为0，暂时没有测试过哪个快在数据量大时，文档好像说数据量大用编译比较好，默认为false")] bool isCompiled = false,
+           [ExcelArgument(Description = @"用来指定\w是否匹配一些特殊编码之类的例如中文，当false时会匹配中文,指定为true时，可能和其他的指定有些冲突，默认为false")] bool isECMAScript = false,
+           [ExcelArgument(Description = "从右往左匹配，默认为false")] bool isRightToLeft = false)
         {
             using (StreamReader sr = new StreamReader(fileFullPath))
             {

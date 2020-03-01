@@ -10,45 +10,9 @@ namespace ExcelUDF
     public partial class ExcelUDF
     {
 
-        [ExcelFunction(Category = "中文相关", Description = "数字转换为多个单元格存放的效果，财务用途。**Excel自定义函数**")]
-        public static object NumToMultiCells(
-            [ExcelArgument(Description = "需要拆分的原始数字")] double inputNumber,
-            [ExcelArgument(Description = "拆分的总列数，含角分。拆分到亿为单位的话为11")] int colNum,
-            [ExcelArgument(Description = "拆分的总列数，含角分。拆分到亿为单位的话为11")] bool hasLeadingZero
-            )
-        {
-            if (colNum == 0)
-            {
-                colNum = 11;
-            }
-            string numberString = inputNumber.ToString();
-            if (numberString.Contains("."))//含小数点
-            {
-
-                numberString = numberString.Split('.')[0] + numberString.Split('.')[1].PadRight(2, '0');
-            }
-            if (hasLeadingZero)
-            {
-                numberString = numberString.PadLeft(colNum, '0');
-
-                numberString = numberString.Substring(numberString.Length - colNum, colNum);
-            }
-            else
-            {
-                numberString = numberString.PadLeft(colNum, ' ');
-                numberString = numberString.Substring(numberString.Length - colNum, colNum);
-            }
-
-
-            return Common.ReturnDataArray(numberString.ToArray().Select(s => s.ToString().Replace(" ", "")).ToArray(), "H");
-        }
-
-
-
-
         [ExcelFunction(Category = "中文相关", Description = "数字转换为大写中文金额。**Excel自定义函数**")]
-        public static string NumToCnCapital(
-            [ExcelArgument(Description = "传入需要转换大写的数字")] double inputNumber)
+        public static string ZW数字转大写金额(
+            [ExcelArgument(Description = "需要转换为大写中文金额的数字")] double inputNumber)
         {
 
             // 大写数字数组
@@ -110,8 +74,8 @@ namespace ExcelUDF
 
         }
         [ExcelFunction(Category = "中文相关", Description = "中文转全拼。**Excel自定义函数**")]
-        public static string CnToPinYin(
-            [ExcelArgument(Description = "转入需要转换拼音的中文字符串")] string inputChineseChar,
+        public static string ZW全拼(
+            [ExcelArgument(Description = "需要转换拼音的中文字符串")] string inputChineseChar,
             [ExcelArgument(Description = "中文拼音间的间隔符")] string separateString
             )
         {
@@ -119,14 +83,14 @@ namespace ExcelUDF
         }
 
         [ExcelFunction(Category = "中文相关", Description = "中文转拼音后取大写首字母。**Excel自定义函数**")]
-        public static string CnToPinYinFirstSpell([ExcelArgument(Description = "传入需要转换拼音的中文字符串")] string inputChineseChar)
+        public static string ZW拼音大写首字母([ExcelArgument(Description = "传入需要转换拼音的中文字符串")] string inputChineseChar)
         {
             return PingYinHelper.GetFirstSpell(inputChineseChar);
         }
 
 
         [ExcelFunction(Category = "中文相关", Description = "大写中文金额转换为数字。**Excel自定义函数**")]
-        public static decimal CnCapitalToNum([ExcelArgument(Description = "传入需要转换为数字的大写中文金额")] string inputChinseUpperMoney)
+        public static decimal ZW大写金额转数字([ExcelArgument(Description = "传入需要转换为数字的大写中文金额")] string inputChinseUpperMoney)
         {
 
             string beforeYiString;

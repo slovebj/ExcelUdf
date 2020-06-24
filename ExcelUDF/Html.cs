@@ -16,13 +16,13 @@ namespace ExcelUDF
         [ExcelFunction(Category = "Html解析", Description = "对网页HTML进行抓取解析！")]
         public static string HtmlNode(
             [ExcelArgument(Description = "解析的网址")] string url,
-            [ExcelArgument(Description = "xpath")] string htmlNode,
-            [ExcelArgument(Description = "节点属性")] string attr
+            [ExcelArgument(Description = "xpath，可从浏览器开发者工具中查看源码复制")] string htmlNode,
+            [ExcelArgument(Description = "节点属性：空值、html或属性名")] string attr
         )
         {
             if(url != null & htmlNode != null)
             {
-                HtmlWeb web = new HtmlWeb();
+            HtmlWeb web = new HtmlWeb();
             //从url中加载
             HtmlDocument doc = web.Load(url);
             //获得title标签节点，其子标签下的所有节点也在其中

@@ -146,6 +146,28 @@ namespace ExcelUDF
             }
         }
 
+        [ExcelFunction(Category = "文件文件夹相关", Description = "获取文件夹内文件数量。**Excel自定义函数**")]
+        public static object GetFilesCount(
+            [ExcelArgument(Description = "文件夹路径")] string dirPath,
+            [ExcelArgument(Description = "文件夹扩展名")] string fileExt)
+        {
+            if (Directory.Exists(dirPath))
+            {
+                System.IO.DirectoryInfo dirInfo = new DirectoryInfo(dirPath);
+                if (fileExt == "")
+                {
+                    return dirInfo.GetFiles().Length;
+                }
+                else
+                {
+                    return dirInfo.GetFiles(@"*." + fileExt).Length;
+                }
+            }
+            else
+            {
+                return "文件夹不存在";
+            }
+        }
 
         [ExcelFunction(Category = "文件文件夹相关", Description = "在一个全路径下获取文件名，格式为：文件名+后缀名,如：C:\test\test.txt返回的是test.txt字符串。**Excel自定义函数**")]
         public static string GetFileName(
